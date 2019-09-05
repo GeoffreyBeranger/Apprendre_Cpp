@@ -18,26 +18,20 @@ return 0;.
     float temperature;
     float humidite;
     int pression;
-
     cout << "Saisir la temperature , l'humidité et la pression : " ;
     cin >> temperature >> humidite >> pression ;
-
     cout << "la température est : " << temperature << " °" << endl;
     cout << "le taux d'humidité est : " << humidite << " %" << endl;
     cout << "la pression est : " << pression << " hPa" << endl;
     return 0;
-
     */
 
     /*
-
     char phrase[80+1];
     cout << "Saisir une phrase : " ;
     cin.getline(phrase,80);
     cout << "Votre phrase est :" << phrase << endl;
-
     return 0;
-
     */
 /*
     int val = 192;
