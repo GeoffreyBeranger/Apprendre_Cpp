@@ -1,0 +1,156 @@
+\hypertarget{class_menu}{}\section{Référence de la classe Menu}
+\label{class_menu}\index{Menu@{Menu}}
+
+
+The \hyperlink{class_menu}{Menu} class.  
+
+
+
+
+{\ttfamily \#include $<$menu.\+h$>$}
+
+
+
+Graphe de collaboration de Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_menu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{$\sim$\+Menu} ()
+\item 
+\hyperlink{class_menu_a3ec2bde9fc4dfdf5d4e8afcc562fd58f}{Menu} (const string \+\_\+nom)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_menu_a3ec2bde9fc4dfdf5d4e8afcc562fd58f}{Menu\+::\+Menu}. \end{DoxyCompactList}\item 
+int \hyperlink{class_menu_a079e0c6a24248a07993b48b310ba65ce}{Afficher} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_menu_a079e0c6a24248a07993b48b310ba65ce}{Menu\+::\+Afficher}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_menu_a6ddcaabf2fedb30f5136f3be655d60ce}{Attendre\+Appui\+Touche} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_menu_a6ddcaabf2fedb30f5136f3be655d60ce}{Menu\+::\+Attendre\+Appui\+Touche}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_menu_a99574cb51606811f697854859bc1ccc1}{nom}
+\begin{DoxyCompactList}\small\item\em Désigne le nom du fichier. \end{DoxyCompactList}\item 
+string $\ast$ \hyperlink{class_menu_aec975cfea9216420d5754ce2e9321390}{options}
+\begin{DoxyCompactList}\small\item\em Représente un tableau de chaînes de caractères implémentées sous la forme de string. Ce tableau sera alloué dynamiquement en fonction du nombre de lignes du fichier. \end{DoxyCompactList}\item 
+int \hyperlink{class_menu_ad59953635d184fefcddf95015a761187}{nb\+Options}
+\begin{DoxyCompactList}\small\item\em Contient le nombre d\textquotesingle{}options du \hyperlink{class_menu}{Menu}. \end{DoxyCompactList}\item 
+int \hyperlink{class_menu_a745c540589015b573d8214e1080e2a8e}{longueur\+Max}
+\begin{DoxyCompactList}\small\item\em Taille de la plus grande chaîne contenue dans le tableau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+The \hyperlink{class_menu}{Menu} class. 
+
+\begin{DoxyDate}{Date}
+13 septembre 2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Auteur}
+B\+E\+R\+A\+N\+G\+ER Geoffrey (feat.\+Mathis C) 
+\end{DoxyAuthor}
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_menu_a831387f51358cfb88cd018e1777bc980}\label{class_menu_a831387f51358cfb88cd018e1777bc980}} 
+\index{Menu@{Menu}!````~Menu@{$\sim$\+Menu}}
+\index{````~Menu@{$\sim$\+Menu}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{$\sim$\+Menu()}{~Menu()}}
+{\footnotesize\ttfamily Menu\+::$\sim$\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_menu_a3ec2bde9fc4dfdf5d4e8afcc562fd58f}\label{class_menu_a3ec2bde9fc4dfdf5d4e8afcc562fd58f}} 
+\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{const string}]{\+\_\+nom }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_menu_a3ec2bde9fc4dfdf5d4e8afcc562fd58f}{Menu\+::\+Menu}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \+\_\+nom} & \\
+\hline
+\end{DoxyParams}
+Constructeur de la classe \hyperlink{class_menu}{Menu} qui initialise le nom et la longueur\+Max, On verifie si le fichier est ouvert sinon on affiche un msg d\textquotesingle{}erreur, attribution de la valeur longueur\+Max par lecture de toute les lignes du fichier 
+
+\subsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_menu_a079e0c6a24248a07993b48b310ba65ce}\label{class_menu_a079e0c6a24248a07993b48b310ba65ce}} 
+\index{Menu@{Menu}!Afficher@{Afficher}}
+\index{Afficher@{Afficher}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{Afficher()}{Afficher()}}
+{\footnotesize\ttfamily int Menu\+::\+Afficher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_menu_a079e0c6a24248a07993b48b310ba65ce}{Menu\+::\+Afficher}. 
+
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+Methode Afficher qui affiche un tableau adaptatif en fonction du nombre d\textquotesingle{}options et de la longueur\+Max de la plus longue option \mbox{\Hypertarget{class_menu_a6ddcaabf2fedb30f5136f3be655d60ce}\label{class_menu_a6ddcaabf2fedb30f5136f3be655d60ce}} 
+\index{Menu@{Menu}!Attendre\+Appui\+Touche@{Attendre\+Appui\+Touche}}
+\index{Attendre\+Appui\+Touche@{Attendre\+Appui\+Touche}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{Attendre\+Appui\+Touche()}{AttendreAppuiTouche()}}
+{\footnotesize\ttfamily void Menu\+::\+Attendre\+Appui\+Touche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\hyperlink{class_menu_a6ddcaabf2fedb30f5136f3be655d60ce}{Menu\+::\+Attendre\+Appui\+Touche}. 
+
+Methode Attendre\+Appui\+Touhche qui attends qu\textquotesingle{}on appuie sur une touche pour reafficher le tableau 
+
+\subsection{Documentation des données membres}
+\mbox{\Hypertarget{class_menu_a745c540589015b573d8214e1080e2a8e}\label{class_menu_a745c540589015b573d8214e1080e2a8e}} 
+\index{Menu@{Menu}!longueur\+Max@{longueur\+Max}}
+\index{longueur\+Max@{longueur\+Max}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{longueur\+Max}{longueurMax}}
+{\footnotesize\ttfamily int Menu\+::longueur\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Taille de la plus grande chaîne contenue dans le tableau. 
+
+\mbox{\Hypertarget{class_menu_ad59953635d184fefcddf95015a761187}\label{class_menu_ad59953635d184fefcddf95015a761187}} 
+\index{Menu@{Menu}!nb\+Options@{nb\+Options}}
+\index{nb\+Options@{nb\+Options}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{nb\+Options}{nbOptions}}
+{\footnotesize\ttfamily int Menu\+::nb\+Options\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contient le nombre d\textquotesingle{}options du \hyperlink{class_menu}{Menu}. 
+
+\mbox{\Hypertarget{class_menu_a99574cb51606811f697854859bc1ccc1}\label{class_menu_a99574cb51606811f697854859bc1ccc1}} 
+\index{Menu@{Menu}!nom@{nom}}
+\index{nom@{nom}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{nom}{nom}}
+{\footnotesize\ttfamily string Menu\+::nom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Désigne le nom du fichier. 
+
+\mbox{\Hypertarget{class_menu_aec975cfea9216420d5754ce2e9321390}\label{class_menu_aec975cfea9216420d5754ce2e9321390}} 
+\index{Menu@{Menu}!options@{options}}
+\index{options@{options}!Menu@{Menu}}
+\subsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily string$\ast$ Menu\+::options\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Représente un tableau de chaînes de caractères implémentées sous la forme de string. Ce tableau sera alloué dynamiquement en fonction du nombre de lignes du fichier. 
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/home/\+U\+S\+E\+R\+S/\+E\+L\+E\+V\+E\+S/\+S\+N\+I\+R2018/gberanger/projet\+Qt/\+S\+N\+I\+R2/\+Apprendre\+\_\+\+Cpp/\+Chapitre\+\_\+2/02\+\_\+\+Menu/\hyperlink{menu_8h}{menu.\+h}\item 
+/home/\+U\+S\+E\+R\+S/\+E\+L\+E\+V\+E\+S/\+S\+N\+I\+R2018/gberanger/projet\+Qt/\+S\+N\+I\+R2/\+Apprendre\+\_\+\+Cpp/\+Chapitre\+\_\+2/02\+\_\+\+Menu/\hyperlink{menu_8cpp}{menu.\+cpp}\end{DoxyCompactItemize}
