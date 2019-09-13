@@ -2,6 +2,12 @@
 
 
 using namespace std;
+/**
+ * @brief Menu::Menu
+ * @param _nom
+ * @details Constructeur de la classe Menu qui initialise le nom et la longueurMax, On verifie si le fichier est ouvert
+ *          sinon on affiche un msg d'erreur,  attribution de la valeur longueurMax par lecture de toute les lignes du fichier
+ */
 Menu::Menu(const string _nom):nom(_nom), longueurMax(0)
 {
 
@@ -27,7 +33,15 @@ Menu::Menu(const string _nom):nom(_nom), longueurMax(0)
 Menu::~Menu()
 {
     delete [] options;
+
 }
+
+/**
+ * @brief Menu::Afficher
+ * @return
+ * @details Methode Afficher qui affiche un tableau adaptatif en fonction du nombre d'options et de la longueurMax de la plus longue option
+ */
+
 int Menu::Afficher()
 {
     int choix;
@@ -35,11 +49,12 @@ int Menu::Afficher()
 
     do{
         system("clear");
-        cout << "+" << setfill('-') << setw(6) << "+" <<setfill(' ')<< setfill('-') << setw(longueurMax+3) << "+" << endl;
+        cout << "+" << setfill('-') << setw(6) << "+" <<setfill(' ')<< setfill('-') << setw(longueurMax+2) << "+" << endl;
         for (int i=0; i<nbOptions; i++){
-            cout << "|  " << left << i+1 << right << "  " << "|" << " "  << options[i] << " " << "|" << endl;
+            int longueurOptions =  longueurMax - static_cast<int>(options[i].length()) + 1;
+            cout << "|  " << left << i+1 << right << "  " << "| "  <<  options[i] << setfill(' ') << setw(longueurOptions) << "|" << endl;
         }
-        cout << "+" << setfill('-') << setw(6) << "+" <<setfill(' ')<< setfill('-') << setw(longueurMax+3) << "+" << endl <<endl;
+        cout << "+" << setfill('-') << setw(6) << "+" <<setfill(' ')<< setfill('-') << setw(longueurMax+2) << "+" << endl <<endl;
 
         if(passage==false){
             cout << "Votre choix svp : ";
@@ -60,8 +75,10 @@ int Menu::Afficher()
 }
 
 
-
-
+/**
+ * @brief Menu::AttendreAppuiTouche
+ * @details Methode AttendreAppuiTouhche qui attends qu'on appuie sur une touche pour reafficher le tableau
+ */
 void Menu::AttendreAppuiTouche()
 {
 

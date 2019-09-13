@@ -11,13 +11,22 @@
 using namespace std;
 
 
+/**
+ * @brief The Menu class
+ * @date 13 septembre 2019
+ * @author BERANGER Geoffrey (feat.Mathis C)
+ */
 class Menu
 {
 private:
-    string nom; ///Désigne le nom du fichier
-    string * options; ///Représente un tableau de chaînes de caractères implémentées sous la forme de string. Ce tableau sera alloué dynamiquement en fonction du nombre de lignes du fichier
-    int nbOptions; ///Contient le nombre d'options du Menu
-    int longueurMax; ///Taille de la plus grande chaîne contenue dans le tableau
+    ///Désigne le nom du fichier
+    string nom;
+    ///Représente un tableau de chaînes de caractères implémentées sous la forme de string. Ce tableau sera alloué dynamiquement en fonction du nombre de lignes du fichier
+    string * options;
+    ///Contient le nombre d'options du Menu
+    int nbOptions;
+    ///Taille de la plus grande chaîne contenue dans le tableau
+    int longueurMax;
 
 public:
     ~Menu();

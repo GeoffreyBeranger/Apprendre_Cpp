@@ -3,6 +3,10 @@
 #include "menu.h"
 
 using namespace std;
+/**
+ * @brief The CHOIX_MENU enum
+ * @details Enumeration qui associe un chiffre a une option
+ */
 
 enum CHOIX_MENU
 {
@@ -12,7 +16,11 @@ enum CHOIX_MENU
     OPTION_4,
     QUITTER
 };
-
+/**
+ * @brief main
+ * @return
+ * @details Programme Principal qui créer un menu en fonction d'un fichier texte qu'on donne, Switch qui reconnait quelle touche on appui
+ */
 int main()
 {
     int choix;
