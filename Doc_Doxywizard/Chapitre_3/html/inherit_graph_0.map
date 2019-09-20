@@ -1,0 +1,11 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$classbarre.html" title="The barre class. " alt="" coords="5,107,56,133"/>
+<area shape="rect" id="node2" href="$classbarre_carree.html" title="The barreCarree class. " alt="" coords="114,5,205,32"/>
+<area shape="rect" id="node3" href="$classbarre_hexagone.html" title="The barreHexagone class. " alt="" coords="104,56,215,83"/>
+<area shape="rect" id="node5" href="$classbarre_octogone.html" title="The barreOctogone class. " alt="" coords="106,107,213,133"/>
+<area shape="rect" id="node7" href="$classbarre_rectangle.html" title="The barreRectangle class. " alt="" coords="104,157,215,184"/>
+<area shape="rect" id="node8" href="$classbarre_ronde.html" title="The barreRonde class. " alt="" coords="115,208,204,235"/>
+<area shape="rect" id="node4" href="$classbarre_hexa_creuse.html" title="The barreHexaCreuse class. " alt="" coords="275,56,399,83"/>
+<area shape="rect" id="node6" href="$classbarre_octogone_creuse.html" title="The barreOctogoneCreuse class. " alt="" coords="263,107,412,133"/>
+<area shape="rect" id="node9" href="$classbarre_ronde_creuse.html" title="The barreRondeCreuse class. " alt="" coords="272,208,403,235"/>
+</map>
