@@ -7,6 +7,9 @@
 using namespace std;
 
 
+/**
+ * @brief The barre class
+ */
 class barre
 {
 public:

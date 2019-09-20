@@ -4,6 +4,10 @@
 #include <math.h>
 
 
+/**
+ * @brief The barreRonde class
+ * @details definition de la classe BarreRonde qui herite de barre
+ */
 class barreRonde : public barre
 {
 public:
@@ -11,7 +15,7 @@ public:
     ~barreRonde();
     double CalculerSection();
     double CalculerMasse();
-private:
+protected:
     double diametre;
 };
 

@@ -3,6 +3,10 @@
 #include "barre.h"
 
 
+/**
+ * @brief The barreRectangle class
+ * @details Definition de la classe barreRectangle qui herite de barre
+ */
 class barreRectangle : public barre
 {
 public:

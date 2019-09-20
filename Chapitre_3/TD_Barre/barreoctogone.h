@@ -5,6 +5,10 @@
 #include <string>
 
 
+/**
+ * @brief The barreOctogone class
+ * @details Definition de la classe BarreOctogone qui herite de barre
+ */
 class barreOctogone : public barre
 {
 public:
@@ -12,8 +16,8 @@ public:
     ~barreOctogone();
     double CalculerMasse();
     double CalculerSection();
-private:
-    double diametre;
+protected:
+    double diametre;/// diametre du grand cercle
 };
 
 #endif // BARREOCTOGONE_H

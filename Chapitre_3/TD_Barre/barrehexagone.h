@@ -1,10 +1,14 @@
 #ifndef BARREHEXAGONE_H
 #define BARREHEXAGONE_H
 #include <string>
-#include <barre.h>
+#include "barre.h"
 #include <math.h>
 
 
+/**
+ * @brief The barreHexagone class
+ * @details Definition de la classe BarreHexagone qui herite de barre
+ */
 class barreHexagone : public barre
 {
 public:
@@ -12,8 +16,8 @@ public:
     ~barreHexagone();
     double CalculerMasse();
     double CalculerSection();
-private:
-    double diametre;
+protected:
+    double diametre;///diametre du grand hexagone
 };
 
 #endif // BARREHEXAGONE_H

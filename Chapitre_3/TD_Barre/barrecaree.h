@@ -3,6 +3,10 @@
 #include "barre.h"
 #include <math.h>
 
+/**
+ * @brief The barreCarree class
+ * @details
+ */
 class barreCarree : public barre
 {
 public:

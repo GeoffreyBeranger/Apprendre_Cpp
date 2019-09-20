@@ -4,7 +4,14 @@
 
 
 
-
+/**
+ * @brief barre::barre
+ * @param _reference
+ * @param _longueur
+ * @param _densite
+ * @param _nomAlliage
+ * @details Constructeur de la classe barre
+ */
 barre::barre(const string _reference, const int _longueur, const float _densite, const string _nomAlliage):
     reference(_reference),
     longueur(_longueur),
@@ -14,11 +21,19 @@ barre::barre(const string _reference, const int _longueur, const float _densite,
     cout << "Constructeur de la Classe Barre"  << endl;
 }
 
+/**
+ * @brief barre::~barre
+ * @details destructeur classe barre
+ */
 barre::~barre()
 {
     cout << "Destructeur de la Classe barre" << endl;
 }
 
+/**
+ * @brief barre::AfficherCaracteristiques
+ * @details methode afficher les caracteristique
+ */
 void barre::AfficherCaracteristiques()
 {
     cout << "La Référence de la barre est : " << reference << endl;
