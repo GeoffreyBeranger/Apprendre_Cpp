@@ -1,7 +1,9 @@
 #ifndef CONTENANT_H
 #define CONTENANT_H
 
-
+/**
+ * @brief The contenant class
+ */
 class contenant
 {
 public:

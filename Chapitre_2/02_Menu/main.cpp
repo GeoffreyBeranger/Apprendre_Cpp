@@ -8,14 +8,7 @@ using namespace std;
  * @details Enumeration qui associe un chiffre a une option
  */
 
-enum CHOIX_MENU
-{
-    OPTION_1 = 1,
-    OPTION_2,
-    OPTION_3,
-    OPTION_4,
-    QUITTER
-};
+
 /**
  * @brief main
  * @return

@@ -1,0 +1,5 @@
+Droite
+Gauche
+Reculer
+Avancer
+Quitter 

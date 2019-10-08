@@ -2,7 +2,9 @@
 #define CARTON_H
 #include "contenant.h"
 
-
+/**
+ * @brief The carton class
+ */
 class carton : public contenant
 {
 public:

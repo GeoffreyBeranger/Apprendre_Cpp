@@ -12,8 +12,10 @@ Menu::Menu(const string _nom):nom(_nom), longueurMax(0)
 {
 
     ifstream fichierMenu(_nom.c_str());
+
     if(!fichierMenu .is_open()){
-        cout << "Erreur lors de l'ouverture du fichier menu"<<endl;
+        ErreurFichier exep(FICHIER,"Nom de Fichier Incorrecte");
+
         nbOptions = 0;
     } else {
         int nbLignes = static_cast<int>(count(istreambuf_iterator<char>(fichierMenu),istreambuf_iterator<char>(),'\n'));
@@ -32,8 +34,8 @@ Menu::Menu(const string _nom):nom(_nom), longueurMax(0)
 
 Menu::~Menu()
 {
-    delete [] options;
-
+    if(options != nullptr)
+        delete [] options;
 }
 
 /**
@@ -89,6 +91,21 @@ void Menu::AttendreAppuiTouche()
     system("clear");
 
 }
+
+int ErreurFichier::ObtenirCodeErreur() const
+{
+
+    return codeErreur;
+
+}
+
+string ErreurFichier::ObtenirDescription() const
+{
+
+    return message;
+
+}
+
 
 
 

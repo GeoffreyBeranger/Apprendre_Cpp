@@ -5,7 +5,14 @@ using namespace std;
 
 
 
-
+/**
+ * @brief carton::carton
+ * @param _largeur
+ * @param _hauteur
+ * @param _profondeur
+ * @param _poidsMaxi
+ * @details Constructeur de la classe carton, initialisation des parametres
+ */
 carton::carton(const int _largeur, const int _hauteur, const int _profondeur, const float _poidsMaxi):contenant (_largeur,_hauteur,_profondeur),poidsMaxi(_poidsMaxi)
 {
 
@@ -18,6 +25,10 @@ carton::carton(const int _largeur, const int _hauteur, const int _profondeur, co
 
 }
 
+/**
+ * @brief carton::~carton
+ * @details Destructeur de la classe carton
+ */
 carton::~carton()
 {
 
@@ -25,6 +36,11 @@ carton::~carton()
 
 }
 
+/**
+ * @brief carton::ObtenirPoidsMax
+ * @details Methode ObtenirPoidsMax qui retourne  le poids de l'objet
+ * @return
+ */
 float carton::ObtenirPoidsMax()
 {
     return poidsMaxi;

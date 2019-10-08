@@ -5,9 +5,14 @@
 
 using namespace std;
 
+
+/**
+ * @brief main
+ * @details Création d'un objet une CaisseDeBouteilles
+ * @return
+ */
 int main()
 {
-
 
     caisseDeBouteilles uneCaisseDeBouteilles(3,3,3,10,2);
 

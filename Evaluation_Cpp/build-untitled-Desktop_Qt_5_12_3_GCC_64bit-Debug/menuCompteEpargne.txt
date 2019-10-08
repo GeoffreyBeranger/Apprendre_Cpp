@@ -1,0 +1,5 @@
+Consulter_Solde
+Effectuer_un_Depot
+Effectuer_un_Retrait
+Calculer_les_Interets
+Quitter

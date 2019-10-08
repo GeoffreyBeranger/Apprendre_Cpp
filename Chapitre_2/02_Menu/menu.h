@@ -10,6 +10,20 @@
 
 using namespace std;
 
+enum erreurs
+{
+    FICHIER
+};
+
+enum CHOIX_MENU
+{
+    OPTION_1 = 1,
+    OPTION_2,
+    OPTION_3,
+    OPTION_4,
+    QUITTER
+};
+
 
 /**
  * @brief The Menu class
@@ -34,5 +48,25 @@ public:
     int Afficher();
     static void AttendreAppuiTouche();
 };
+
+
+class ErreurFichier
+{
+
+private:
+    int codeErreur;
+    string message;
+
+public:
+    ErreurFichier(int _codeErreur, string _message);
+    int ObtenirCodeErreur()const;
+    string ObtenirDescription()const;
+
+};
+
+
+
+
+
 
 #endif // MENU_H

@@ -4,14 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        barre.cpp \
         caissedebouteilles.cpp \
         carton.cpp \
         contenant.cpp \
         main.cpp
 
 HEADERS += \
-    barre.h \
     caissedebouteilles.h \
     carton.h \
     contenant.h
