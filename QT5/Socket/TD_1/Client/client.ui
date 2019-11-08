@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Client</class>
+ <widget class="QWidget" name="Client">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>340</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Client</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox_ConnexionServeur">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>541</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Connexion au Serveur</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_Connexion">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>110</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connexion</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_EtatConnexion">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>49</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>URW Bookman L</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Quitter">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quitter</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_EtatConnexion">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>30</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Etat de la connexion</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>296</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_AdresseIp">
+         <property name="text">
+          <string>Adresse Ip du Serveur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_AdresseIpServeur">
+         <property name="text">
+          <string>172.18.58.83</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_NumeroPortServeur">
+         <property name="text">
+          <string>Numéro de port du serveur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_NumeroPortServeur">
+         <property name="text">
+          <string>8888</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_InformationsClient">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>160</y>
+     <width>541</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Informations Client</string>
+   </property>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>531</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QPushButton" name="pushButton_NomdOrdiDistant">
+         <property name="text">
+          <string>Nom de l'Ordinateur distant</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_NomUtilisateur">
+         <property name="text">
+          <string>Nom de l'Utilisateur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_ArchitectureOrdi">
+         <property name="text">
+          <string>Architecture de l'Ordinateur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_OsOrdi">
+         <property name="text">
+          <string>OS de l'Ordinateur</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="lineEdit_NomOrdiDistant"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_NonUtilisateur"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_ArchitectureORdi"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_OsOrdi"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_Quitter</sender>
+   <signal>clicked()</signal>
+   <receiver>Client</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

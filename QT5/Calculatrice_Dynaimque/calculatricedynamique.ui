@@ -1,6 +1,6 @@
 <ui version="4.0">
- <class>CalculatriceSd</class>
- <widget class="QWidget" name="CalculatriceSd" >
+ <class>CalculatriceDynamique</class>
+ <widget class="QWidget" name="CalculatriceDynamique" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>CalculatriceSd</string>
+   <string>CalculatriceDynamique</string>
   </property>
  </widget>
  <layoutDefault spacing="6" margin="11" />
