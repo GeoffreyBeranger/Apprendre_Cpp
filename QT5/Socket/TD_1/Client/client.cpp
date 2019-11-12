@@ -12,6 +12,7 @@ Client::Client(QWidget *parent) :
     connect(socketDeDialogueAvecServeur, &QTcpSocket::connected, this, &Client::onQTcpSocket_connected);
     connect(socketDeDialogueAvecServeur, &QTcpSocket::disconnected, this , &Client::onQtspSocket_disconnected);
     connect(socketDeDialogueAvecServeur, &QTcpSocket::readyRead, this , &Client::onQTcpSocket_readyRead);
+    connect(socketDeDialogueAvecServeur,QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error),this,&Client::onQTcpSocket_error);
 }
 
 Client::~Client()
@@ -42,6 +43,9 @@ void Client::onQTcpSocket_connected()
     ui->pushButton_Connexion->setText("Deconnexion");
     ui->textEdit_EtatConnexion->clear();
     ui->textEdit_EtatConnexion->append("Connecté au Serveur");
+    ui->groupBox_InformationsClient->setEnabled(1);
+    ui->lineEdit_AdresseIpServeur->setEnabled(0);
+    ui->lineEdit_NumeroPortServeur->setEnabled(0);
 
 }
 
@@ -51,6 +55,9 @@ void Client::onQtspSocket_disconnected()
     ui->pushButton_Connexion->setText("Deconnexion");
     ui->textEdit_EtatConnexion->clear();
     ui->textEdit_EtatConnexion->append("Deconnecté du Serveur");
+    ui->groupBox_InformationsClient->setEnabled(0);
+    ui->lineEdit_AdresseIpServeur->setEnabled(1);
+    ui->lineEdit_NumeroPortServeur->setEnabled(1);
 }
 
 void Client::onQTcpSocket_readyRead()
@@ -58,19 +65,23 @@ void Client::onQTcpSocket_readyRead()
     qDebug() << "Réponse du Serveur";
     QByteArray buffer;
     buffer = socketDeDialogueAvecServeur->readAll();
-    ui->lineEdit_NomOrdiDistant->setText(buffer);
     if(typeDeDemande == "c"){
-            ui->lineEdit_NomOrdiDistant->setText(buffer);
-        }
-        if(typeDeDemande == "o"){
-            ui->lineEdit_OsOrdi->setText(buffer);
-        }
-        if(typeDeDemande == "a"){
-            ui->lineEdit_ArchitectureORdi->setText(buffer);
-        }
-        if(typeDeDemande == "u"){
-            ui->lineEdit_NonUtilisateur->setText(buffer);
-        }
+        ui->lineEdit_NomOrdiDistant->setText(buffer);
+    }
+    if(typeDeDemande == "o"){
+        ui->lineEdit_OsOrdi->setText(buffer);
+    }
+    if(typeDeDemande == "a"){
+        ui->lineEdit_ArchitectureORdi->setText(buffer);
+    }
+    if(typeDeDemande == "u"){
+        ui->lineEdit_NonUtilisateur->setText(buffer);
+    }
+}
+
+void Client::onQTcpSocket_error()
+{
+    ui->textEdit_EtatConnexion->append(socketDeDialogueAvecServeur->errorString());
 }
 
 void Client::on_pushButton_NomdOrdiDistant_clicked()
@@ -96,3 +107,5 @@ void Client::on_pushButton_OsOrdi_clicked()
     typeDeDemande = "o";
     socketDeDialogueAvecServeur->write(typeDeDemande.toLatin1());
 }
+
+

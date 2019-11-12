@@ -4,4 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        alveoleslibres.cpp \
+        main.cpp \
+        menu.cpp
+
+HEADERS += \
+    alveoleslibres.h \
+    menu.h

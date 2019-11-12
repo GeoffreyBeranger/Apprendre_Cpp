@@ -33,6 +33,7 @@ private:
     void onQTcpSocket_connected();
     void onQtspSocket_disconnected();
     void onQTcpSocket_readyRead();
+    void onQTcpSocket_error();
     QString typeDeDemande;
 
 };

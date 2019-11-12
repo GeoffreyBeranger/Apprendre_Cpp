@@ -21,7 +21,7 @@ bool Catalogue::AjouterBarre(Barre *ptrBarre)
 
     bool retour = true;
     if (index < nbBarres)
-        lesBarres[index++] = *ptrBarre;
+        lesBarres[index++] = ptrBarre;
     else
         retour = false;
     return retour;
@@ -29,9 +29,15 @@ bool Catalogue::AjouterBarre(Barre *ptrBarre)
 
     }
 
-}
+
 
 void Catalogue::AfficherCatalogue()
 {
+    for (int i = 0; i < nbBarres; i++)
+    {
 
+        lesBarres[i]->AfficherCaracteristiques();
+        cout << lesBarres[i]->CalculerMasse() << endl;
+
+    }
 }

@@ -90,7 +90,7 @@
      <string>Etat de la connexion</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -112,7 +112,7 @@
        <item>
         <widget class="QLineEdit" name="lineEdit_AdresseIpServeur">
          <property name="text">
-          <string>172.18.58.83</string>
+          <string>172.18.58.147</string>
          </property>
         </widget>
        </item>
@@ -140,6 +140,9 @@
    </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_InformationsClient">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -151,7 +154,7 @@
    <property name="title">
     <string>Informations Client</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>

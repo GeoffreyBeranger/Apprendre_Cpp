@@ -1,6 +1,7 @@
 #ifndef CATALOGUE_H
 #define CATALOGUE_H
 
+#include "barre.h"
 
 class Catalogue
 {
