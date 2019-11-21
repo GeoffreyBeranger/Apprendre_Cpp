@@ -61,7 +61,7 @@ public:
         comboBox_Departement->setGeometry(QRect(150, 150, 79, 24));
         comboBox_Ville = new QComboBox(BDD);
         comboBox_Ville->setObjectName(QString::fromUtf8("comboBox_Ville"));
-        comboBox_Ville->setGeometry(QRect(280, 160, 79, 24));
+        comboBox_Ville->setGeometry(QRect(280, 150, 79, 24));
         comboBox_Region = new QComboBox(BDD);
         comboBox_Region->setObjectName(QString::fromUtf8("comboBox_Region"));
         comboBox_Region->setGeometry(QRect(10, 150, 79, 24));

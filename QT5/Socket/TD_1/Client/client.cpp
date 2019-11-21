@@ -46,6 +46,10 @@ void Client::onQTcpSocket_connected()
     ui->groupBox_InformationsClient->setEnabled(1);
     ui->lineEdit_AdresseIpServeur->setEnabled(0);
     ui->lineEdit_NumeroPortServeur->setEnabled(0);
+    ui->lineEdit_OsOrdi->clear();
+    ui->lineEdit_NomOrdiDistant->clear();
+    ui->lineEdit_NonUtilisateur->clear();
+    ui->lineEdit_ArchitectureORdi->clear();
 
 }
 

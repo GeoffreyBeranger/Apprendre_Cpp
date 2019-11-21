@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-11-14T16:19:36
+# Project created by QtCreator 2019-11-21T15:14:40
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Serveur
+TARGET = Banque
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -26,13 +26,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        serveurwidget.cpp
+        banque.cpp
 
 HEADERS += \
-        serveurwidget.h
+        banque.h
 
 FORMS += \
-        serveurwidget.ui
+        banque.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

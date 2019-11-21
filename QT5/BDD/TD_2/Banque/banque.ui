@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Banque</class>
+ <widget class="QWidget" name="Banque">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>644</width>
+    <height>515</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Banque</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox_Connexion">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>621</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Connexion</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_Connexion">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>70</y>
+      <width>201</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connexion à la base de données</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>321</width>
+      <height>118</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_Ip">
+         <property name="text">
+          <string>Adresse Ip</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_Bdd">
+         <property name="text">
+          <string>Nom de la BDD</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_Login">
+         <property name="text">
+          <string>Login</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_Mdp">
+         <property name="text">
+          <string>Mot De Passe</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLineEdit" name="lineEdit_Ip"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_NomBdd"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_Login"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_Mdp"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_Affichage">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>621</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Affichage Infos Comptes</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_Affichage">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>301</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Afficher Les Informations de tous les comptes</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>601</width>
+      <height>171</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Quitter">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>480</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_Quitter</sender>
+   <signal>clicked()</signal>
+   <receiver>Banque</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>496</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>496</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
