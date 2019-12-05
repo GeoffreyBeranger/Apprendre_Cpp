@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PartieOperative</class>
+ <widget class="QWidget" name="PartieOperative">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>431</width>
+    <height>312</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PartieOperative</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox_EtatCapteurs">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>101</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Etat Capteurs</string>
+   </property>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>85</width>
+      <height>108</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QCheckBox" name="checkBox_Capteur1">
+       <property name="text">
+        <string>Capteur 1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_Capteur2">
+       <property name="text">
+        <string>Capteur 2</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_Capteur3">
+       <property name="text">
+        <string>Capteur 3</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_Capteur4">
+       <property name="text">
+        <string>Capteur 4</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_Barquette">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>40</y>
+     <width>261</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Barquette</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_NewBarquette">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>110</y>
+      <width>121</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nouvelle Barquette</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>231</width>
+      <height>58</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_NumEjecteur">
+         <property name="text">
+          <string>Numéro Ejecteur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_CodeProduit">
+         <property name="text">
+          <string>Code Produit</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="lineEdit_NumEjecteur"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_CodeProduit"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_DebutProduction">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>260</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Début Production</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_ArretProduction">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>260</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Arrêt Production</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Quitter">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>260</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_Quitter</sender>
+   <signal>clicked()</signal>
+   <receiver>PartieOperative</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>272</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
