@@ -3,7 +3,8 @@
 
 PartieOperative::PartieOperative(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::PartieOperative)
+    ui(new Ui::PartieOperative),
+    capteurs(0)
 {
     ui->setupUi(this);
 
@@ -17,12 +18,16 @@ PartieOperative::~PartieOperative()
 
 void PartieOperative::on_pushButton_NewBarquette_clicked()
 {
-    int emplacement = ui->lineEdit_NumEjecteur->text().toInt();
+    quint8 emplacement = ui->lineEdit_NumEjecteur->text().toInt();
     QString codeProduit = ui->lineEdit_CodeProduit->text();
     Barquette *pBarquette = new Barquette(emplacement,codeProduit);
     fileBarquettes.enqueue(pBarquette);
 
+
+
+
     connect(pBarquette,&Barquette::EjecteurTrouve,this,&PartieOperative::onEjecteurTrouve);
+    connect(this,&PartieOperative::CapteurChange,pBarquette,&Barquette::onCapteurChange);
 }
 
 void PartieOperative::on_pushButton_DebutProduction_clicked()
@@ -33,48 +38,44 @@ void PartieOperative::on_pushButton_DebutProduction_clicked()
     qDebug() << "Debut timer";
     connect(&timerPo,&QTimer::timeout,this,&PartieOperative::onTimerPo_TimeOut);
 
+
 }
 
 void PartieOperative::onTimerPo_TimeOut()
 {
-    qDebug() << "Fin Timer";
-    if(!fileBarquettes.isEmpty())
+    if (ui->checkBox_Capteur1->isChecked() && frontMontant == false)
     {
-
-        Barquette * pBarquette  = fileBarquettes.dequeue();
-        tapis.append(pBarquette);
-        if (ui->checkBox_Capteur1->checkState())
+        if(!fileBarquettes.isEmpty())
         {
-
+            Barquette *pBarquette = fileBarquettes.dequeue();
+            tapis.append(pBarquette);
             pBarquette->start();
-
+            frontMontant = true;
         }
-
-
     }
-
-
-
+    else {
+        frontMontant = false;
+    }
 }
 
 
 
-void PartieOperative::onEjecteurTrouve(Barquette pBarquette)
+void PartieOperative::onEjecteurTrouve()
 {
-    qDebug() << "Ejecteur Trouvé";
-
-    int position;
-    QString leCodeProduit;
-    bool FinDuThread = false;
-    position = tapis.indexOf(&pBarquette);
+    qDebug() << "onEjecteurTrouve";
+    QMessageBox msgBox;
+    Barquette *pBarquette = qobject_cast<Barquette*>(sender());
+    int position = tapis.indexOf(pBarquette);
     tapis.removeAt(position);
-    leCodeProduit = pBarquette.ObtenirCodeBarre();
-    if(pBarquette.wait())
-    {
+    QString leCodeProduit = pBarquette->ObtenirCodeBarre();
+    QString lEmplacement = QString::number(pBarquette->ObtenirEmplacement());
+    msgBox.setText("Barquette "+leCodeProduit+" éjectée en :"+ lEmplacement);
+    msgBox.exec();
 
-        pBarquette.~Barquette();
+    disconnect(pBarquette,&Barquette::EjecteurTrouve,this,&PartieOperative::onEjecteurTrouve);
+    disconnect(this,&PartieOperative::CapteurChange,pBarquette,&Barquette::onCapteurChange);
+    pBarquette->deleteLater();
 
-    }
 
 
 }
@@ -83,5 +84,71 @@ void PartieOperative::onEjecteurTrouve(Barquette pBarquette)
 
 void PartieOperative::on_pushButton_ArretProduction_clicked()
 {
+    qDebug() << "Timer Stoppé";
     timerPo.stop();
+}
+
+void PartieOperative::on_checkBox_Capteur1_stateChanged(int arg1)
+{
+
+    if (arg1) {
+
+        capteurs |= 0x01;
+
+    }else {
+        capteurs &= ~0x01;
+
+    }
+    //qDebug() << capteurs;
+
+    emit CapteurChange(capteurs);
+}
+
+void PartieOperative::on_checkBox_Capteur2_stateChanged(int arg1)
+{
+    if (arg1) {
+
+        capteurs |= 0x02;
+
+    }else {
+        capteurs &= ~0x02;
+
+    }
+    //qDebug() << capteurs;
+
+    emit CapteurChange(capteurs);
+
+}
+
+
+
+void PartieOperative::on_checkBox_Capteur3_stateChanged(int arg1)
+{
+
+    if (arg1) {
+
+        capteurs |= 0x04;
+
+    }else {
+        capteurs &= ~0x04;
+
+    }
+    //qDebug() << capteurs;
+
+    emit CapteurChange(capteurs);
+}
+
+void PartieOperative::on_checkBox_Capteur4_stateChanged(int arg1)
+{
+    if (arg1) {
+
+        capteurs |= 0x08;
+
+    }else {
+        capteurs &= ~0x08;
+
+    }
+    //qDebug() << capteurs;
+
+    emit CapteurChange(capteurs);
 }

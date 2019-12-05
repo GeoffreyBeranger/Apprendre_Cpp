@@ -25,7 +25,7 @@
    <property name="title">
     <string>Etat Capteurs</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -91,7 +91,7 @@
      <string>Nouvelle Barquette</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -133,6 +133,9 @@
    </widget>
   </widget>
   <widget class="QPushButton" name="pushButton_DebutProduction">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -146,6 +149,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_ArretProduction">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>170</x>

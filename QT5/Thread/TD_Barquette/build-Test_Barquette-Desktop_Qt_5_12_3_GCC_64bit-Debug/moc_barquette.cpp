@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Barquette_t {
-    QByteArrayData data[4];
-    char stringdata0[40];
+    QByteArrayData data[5];
+    char stringdata0[48];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,10 +34,12 @@ static const qt_meta_stringdata_Barquette_t qt_meta_stringdata_Barquette = {
 QT_MOC_LITERAL(0, 0, 9), // "Barquette"
 QT_MOC_LITERAL(1, 10, 14), // "EjecteurTrouve"
 QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 13) // "CapteurChange"
+QT_MOC_LITERAL(3, 26, 15), // "onCapteurChange"
+QT_MOC_LITERAL(4, 42, 5) // "octet"
 
     },
-    "Barquette\0EjecteurTrouve\0\0CapteurChange"
+    "Barquette\0EjecteurTrouve\0\0onCapteurChange\0"
+    "octet"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,15 +54,19 @@ static const uint qt_meta_data_Barquette[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
        1,    0,   24,    2, 0x06 /* Public */,
-       3,    0,   25,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+       3,    1,   25,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
-    QMetaType::Void,
+
+ // slots: parameters
+    QMetaType::Void, QMetaType::UChar,    4,
 
        0        // eod
 };
@@ -72,7 +78,7 @@ void Barquette::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->EjecteurTrouve(); break;
-        case 1: _t->CapteurChange(); break;
+        case 1: _t->onCapteurChange((*reinterpret_cast< quint8(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -84,15 +90,7 @@ void Barquette::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
                 return;
             }
         }
-        {
-            using _t = void (Barquette::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Barquette::CapteurChange)) {
-                *result = 1;
-                return;
-            }
-        }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject Barquette::staticMetaObject = { {
@@ -139,12 +137,6 @@ int Barquette::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void Barquette::EjecteurTrouve()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
-}
-
-// SIGNAL 1
-void Barquette::CapteurChange()
-{
-    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

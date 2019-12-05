@@ -4,28 +4,36 @@
 #include <QThread>
 #include <QObject>
 #include <QSemaphore>
+#include <QDebug>
+
 
 class Barquette : public QThread
 {
     Q_OBJECT
 
 public:
-    Barquette(const int _emplacement,const QString _codeBarre,QObject *parent = nullptr);
+    Barquette(const quint8 _emplacement,const QString _codeBarre,QObject *parent = nullptr);
     ~Barquette();
     void Run();
     QString ObtenirCodeBarre();
+    quint8 ObtenirEmplacement();
 
 
 private:
     QString codeBarre;
-    int emplacement;
+    quint8 emplacement;
     QString capteurCourant;
-    quint8 EtatCapteur;
+    quint8 etatCapteur;
     QSemaphore synchro;
 
+public slots:
+    void onCapteurChange(quint8 octet);
+
+
+
 signals:
+
     void EjecteurTrouve();
-    void CapteurChange();
 
 
 

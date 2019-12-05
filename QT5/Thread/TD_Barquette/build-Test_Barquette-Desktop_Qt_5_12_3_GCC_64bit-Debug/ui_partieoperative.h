@@ -26,7 +26,7 @@ class Ui_PartieOperative
 {
 public:
     QGroupBox *groupBox_EtatCapteurs;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QCheckBox *checkBox_Capteur1;
     QCheckBox *checkBox_Capteur2;
@@ -34,7 +34,7 @@ public:
     QCheckBox *checkBox_Capteur4;
     QGroupBox *groupBox_Barquette;
     QPushButton *pushButton_NewBarquette;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_NumEjecteur;
@@ -54,30 +54,30 @@ public:
         groupBox_EtatCapteurs = new QGroupBox(PartieOperative);
         groupBox_EtatCapteurs->setObjectName(QString::fromUtf8("groupBox_EtatCapteurs"));
         groupBox_EtatCapteurs->setGeometry(QRect(20, 40, 101, 141));
-        widget = new QWidget(groupBox_EtatCapteurs);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 30, 85, 108));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(groupBox_EtatCapteurs);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 30, 85, 108));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        checkBox_Capteur1 = new QCheckBox(widget);
+        checkBox_Capteur1 = new QCheckBox(layoutWidget);
         checkBox_Capteur1->setObjectName(QString::fromUtf8("checkBox_Capteur1"));
 
         verticalLayout->addWidget(checkBox_Capteur1);
 
-        checkBox_Capteur2 = new QCheckBox(widget);
+        checkBox_Capteur2 = new QCheckBox(layoutWidget);
         checkBox_Capteur2->setObjectName(QString::fromUtf8("checkBox_Capteur2"));
 
         verticalLayout->addWidget(checkBox_Capteur2);
 
-        checkBox_Capteur3 = new QCheckBox(widget);
+        checkBox_Capteur3 = new QCheckBox(layoutWidget);
         checkBox_Capteur3->setObjectName(QString::fromUtf8("checkBox_Capteur3"));
 
         verticalLayout->addWidget(checkBox_Capteur3);
 
-        checkBox_Capteur4 = new QCheckBox(widget);
+        checkBox_Capteur4 = new QCheckBox(layoutWidget);
         checkBox_Capteur4->setObjectName(QString::fromUtf8("checkBox_Capteur4"));
 
         verticalLayout->addWidget(checkBox_Capteur4);
@@ -88,10 +88,10 @@ public:
         pushButton_NewBarquette = new QPushButton(groupBox_Barquette);
         pushButton_NewBarquette->setObjectName(QString::fromUtf8("pushButton_NewBarquette"));
         pushButton_NewBarquette->setGeometry(QRect(80, 110, 121, 24));
-        widget1 = new QWidget(groupBox_Barquette);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(10, 30, 231, 58));
-        horizontalLayout = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(groupBox_Barquette);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 30, 231, 58));
+        horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -99,12 +99,12 @@ public:
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        label_NumEjecteur = new QLabel(widget1);
+        label_NumEjecteur = new QLabel(layoutWidget1);
         label_NumEjecteur->setObjectName(QString::fromUtf8("label_NumEjecteur"));
 
         verticalLayout_3->addWidget(label_NumEjecteur);
 
-        label_CodeProduit = new QLabel(widget1);
+        label_CodeProduit = new QLabel(layoutWidget1);
         label_CodeProduit->setObjectName(QString::fromUtf8("label_CodeProduit"));
 
         verticalLayout_3->addWidget(label_CodeProduit);
@@ -115,12 +115,12 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        lineEdit_NumEjecteur = new QLineEdit(widget1);
+        lineEdit_NumEjecteur = new QLineEdit(layoutWidget1);
         lineEdit_NumEjecteur->setObjectName(QString::fromUtf8("lineEdit_NumEjecteur"));
 
         verticalLayout_2->addWidget(lineEdit_NumEjecteur);
 
-        lineEdit_CodeProduit = new QLineEdit(widget1);
+        lineEdit_CodeProduit = new QLineEdit(layoutWidget1);
         lineEdit_CodeProduit->setObjectName(QString::fromUtf8("lineEdit_CodeProduit"));
 
         verticalLayout_2->addWidget(lineEdit_CodeProduit);
@@ -130,9 +130,11 @@ public:
 
         pushButton_DebutProduction = new QPushButton(PartieOperative);
         pushButton_DebutProduction->setObjectName(QString::fromUtf8("pushButton_DebutProduction"));
+        pushButton_DebutProduction->setEnabled(true);
         pushButton_DebutProduction->setGeometry(QRect(20, 260, 121, 24));
         pushButton_ArretProduction = new QPushButton(PartieOperative);
         pushButton_ArretProduction->setObjectName(QString::fromUtf8("pushButton_ArretProduction"));
+        pushButton_ArretProduction->setEnabled(true);
         pushButton_ArretProduction->setGeometry(QRect(170, 260, 121, 24));
         pushButton_Quitter = new QPushButton(PartieOperative);
         pushButton_Quitter->setObjectName(QString::fromUtf8("pushButton_Quitter"));

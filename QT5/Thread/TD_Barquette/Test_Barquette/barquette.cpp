@@ -1,14 +1,18 @@
 #include "barquette.h"
+#include "partieoperative.h"
 
 
 
-Barquette::Barquette(const int _emplacement, const QString _codeBarre, QObject *parent):
+Barquette::Barquette(const quint8 _emplacement, const QString _codeBarre, QObject *parent):
     QThread (parent),
     codeBarre(_codeBarre),
     emplacement(_emplacement)
 {
 
-
+    QMessageBox msgBox;
+    msgBox.setText(" Une nouvelle barquette a été créée");
+    msgBox.exec();
+    synchro.release();
 
 }
 
@@ -20,9 +24,9 @@ Barquette::~Barquette()
 void Barquette::Run()
 {
 
-
+    qDebug() << "Methode Run";
     quint8 masque = 0x01;
-    int numCapteur = 0;
+    quint8 numCapteur = 0;
     bool frontMontant = false;
 
     while (numCapteur < emplacement)
@@ -30,7 +34,7 @@ void Barquette::Run()
 
         synchro.acquire();
 
-        if (EtatCapteur && numCapteur == masque)
+        if (etatCapteur && numCapteur == masque)
         {
 
             frontMontant = true;
@@ -40,11 +44,12 @@ void Barquette::Run()
         {
 
             numCapteur = numCapteur+1;
-            masque = masque << 1;
+            masque <<=1;
             frontMontant = false;
 
         }
 
+        qDebug() << "numEjecteur: "<< numCapteur << " masque: "<< masque;
     }
 
     emit EjecteurTrouve();
@@ -60,9 +65,19 @@ QString Barquette::ObtenirCodeBarre()
 
 }
 
-void Barquette::CapteurChange()
+quint8 Barquette::ObtenirEmplacement()
 {
 
+    return emplacement;
+
+}
+
+void Barquette::onCapteurChange(quint8 octet)
+{
+
+    qDebug() << "Capteur Changés";
+    etatCapteur = octet;
     synchro.release();
+
 
 }
