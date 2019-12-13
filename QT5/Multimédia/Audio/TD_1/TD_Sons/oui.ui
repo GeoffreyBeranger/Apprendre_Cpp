@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>oui</class>
+ <widget class="QWidget" name="oui">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>oui</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_ChooseFile">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>140</y>
+     <width>111</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Choisir Un Fichier</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_PlayExternalSound">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>140</y>
+     <width>91</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Jouer le Son</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Quitter">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>140</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_Quitter</sender>
+   <signal>clicked()</signal>
+   <receiver>oui</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>291</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

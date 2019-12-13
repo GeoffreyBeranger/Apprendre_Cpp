@@ -16,7 +16,7 @@ class oui : public QWidget
 
 public:
     explicit oui(QWidget *parent = nullptr);
-    ~oui();
+    ~oui(); //Ouuuiiiiii
 
 private slots:
     void on_pushButton_Animation_clicked();
