@@ -6,11 +6,54 @@
 #include <QLinearGradient>
 #include <QConicalGradient>
 
+#define LARGEUR 381
+#define HAUTEUR 241
+
 oui::oui(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::oui)
 {
     ui->setupUi(this);
+    maScene.setSceneRect(0,0,LARGEUR,HAUTEUR);
+    ui->graphicsView_1->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView_1->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    ui->graphicsView_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView_2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView_2->rotate(180);
+
+    ui->graphicsView_3->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView_3->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    QColor bleu(0,0,255);
+    QBrush fond(bleu);
+    fond.setStyle(Qt::Dense5Pattern);
+    ui->graphicsView_3->setBackgroundBrush(fond);
+
+    ui->graphicsView_4->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView_4->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    QColor rouge(255,0,0);
+    QColor blanc(255,255,255);
+    QRadialGradient colorRadialRond(QPointF(200,100),45,QPoint(160,60));
+    colorRadialRond.setColorAt(0,blanc);
+    colorRadialRond.setColorAt(1,rouge);
+    ui->graphicsView_4->setBackgroundBrush(colorRadialRond);
+
+
+    ui->graphicsView_1->fitInView(maScene.sceneRect(),Qt::KeepAspectRatio);
+    ui->graphicsView_1->setScene(&maScene);
+
+    ui->graphicsView_2->fitInView(maScene.sceneRect(),Qt::KeepAspectRatio);
+    ui->graphicsView_2->setScene(&maScene);
+
+    ui->graphicsView_3->fitInView(maScene.sceneRect(),Qt::KeepAspectRatio);
+    ui->graphicsView_3->setScene(&maScene);
+
+    ui->graphicsView_4->fitInView(maScene.sceneRect(),Qt::KeepAspectRatio);
+    ui->graphicsView_4->setScene(&maScene);
+
+    connect(&timer,&QTimer::timeout,&maScene,&QGraphicsScene::advance);
+
+    timer.start(30);
 }
 
 oui::~oui()
@@ -20,39 +63,16 @@ oui::~oui()
 
 void oui::on_pushButton_Animation_clicked()
 {
-    QGraphicsScene *maScene = new QGraphicsScene();
 
-    ui->graphicsView_1->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->graphicsView_1->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    QColor rouge (255,0,0);
+    maBoule = new QGraphicsBouleHorizontalItem(0,2,20,20);
+    maScene.addItem(maBoule);
+    QBrush fondBoule(rouge);
+    maBoule->setBrush(fondBoule);
 
-    maScene->setSceneRect(0,0,600,300);
-    QColor vert(0,255,0);
-    QColor rouge(255,0,0);
-    QColor magenta(255,0,255);
-    QColor bleu(0,0,255);
+}
 
-    QGraphicsEllipseItem unRond;
-    unRond.setPos(100,100);
-
-    QGraphicsEllipseItem *unRondItem=new QGraphicsEllipseItem(200,150,50,50);
-    QPen contour(magenta);
-    contour.setCapStyle(Qt::RoundCap);
-    contour.setStyle(Qt::SolidLine);
-    contour.setJoinStyle(Qt::RoundJoin);
-    contour.setWidth(2);
-
-    QBrush textureContour(magenta);
-    //textureContour.setStyle(Qt::Dense6Pattern);
-    contour.setBrush(textureContour);
-
-
-    QBrush interieur(vert);
-    unRondItem->setBrush(interieur);
-    unRondItem->setPen(contour);
-    //unPolygoneItem->setFlag(QGraphicsItem::ItemIsMovable);
-    maScene->addItem(unRondItem);
-    ui->graphicsView_1->setBackgroundBrush(Qt::white);
-    ui->graphicsView_1->fitInView(maScene->sceneRect(), Qt::KeepAspectRatio);
-    ui->graphicsView_1->setScene(maScene);
-    ui->graphicsView_1->show();
+void oui::on_pushButton_Effacer_clicked()
+{
+    maScene.clear();
 }

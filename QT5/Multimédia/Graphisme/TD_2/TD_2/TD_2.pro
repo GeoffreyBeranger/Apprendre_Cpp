@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        oui.cpp
+        oui.cpp \
+        qgraphicsboulehorizontalitem.cpp
 
 HEADERS += \
-        oui.h
+        oui.h \
+        qgraphicsboulehorizontalitem.h
 
 FORMS += \
         oui.ui

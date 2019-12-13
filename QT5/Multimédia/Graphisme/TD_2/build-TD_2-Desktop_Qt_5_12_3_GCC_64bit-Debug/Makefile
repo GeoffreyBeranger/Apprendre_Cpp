@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../TD_2/main.cpp \
-		../TD_2/oui.cpp moc_oui.cpp
+		../TD_2/oui.cpp \
+		../TD_2/qgraphicsboulehorizontalitem.cpp moc_oui.cpp
 OBJECTS       = main.o \
 		oui.o \
+		qgraphicsboulehorizontalitem.o \
 		moc_oui.o
 DIST          = /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/common/unix.conf \
@@ -228,6 +230,7 @@ DIST          = /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
+		../TD_2/.qmake.stash \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -247,8 +250,10 @@ DIST          = /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/lex.prf \
-		../TD_2/TD_2.pro ../TD_2/oui.h ../TD_2/main.cpp \
-		../TD_2/oui.cpp
+		../TD_2/TD_2.pro ../TD_2/oui.h \
+		../TD_2/qgraphicsboulehorizontalitem.h ../TD_2/main.cpp \
+		../TD_2/oui.cpp \
+		../TD_2/qgraphicsboulehorizontalitem.cpp
 QMAKE_TARGET  = TD_2
 DESTDIR       = 
 TARGET        = TD_2
@@ -431,6 +436,7 @@ Makefile: ../TD_2/TD_2.pro /opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf /o
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -626,6 +632,7 @@ Makefile: ../TD_2/TD_2.pro /opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf /o
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt/5.12.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -664,8 +671,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt/5.12.3/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../TD_2/oui.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../TD_2/main.cpp ../TD_2/oui.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../TD_2/oui.h ../TD_2/qgraphicsboulehorizontalitem.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../TD_2/main.cpp ../TD_2/oui.cpp ../TD_2/qgraphicsboulehorizontalitem.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../TD_2/oui.ui $(DISTDIR)/
 
 
@@ -1047,8 +1054,126 @@ oui.o: ../TD_2/oui.cpp ../TD_2/oui.h \
 		/opt/Qt/5.12.3/gcc_64/include/QtCore/qfiledevice.h \
 		/opt/Qt/5.12.3/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt/5.12.3/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_oui.h
+		ui_oui.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/QVariant \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/QApplication \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qapplication.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qeventloop.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qguiapplication.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qinputmethod.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/QGraphicsView \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qpainter.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qscrollarea.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qframe.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/QPushButton \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qpushbutton.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qicon.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/QGraphicsScene \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/QGraphicsItem \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/QLinearGradient \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/QConicalGradient
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o oui.o ../TD_2/oui.cpp
+
+qgraphicsboulehorizontalitem.o: ../TD_2/qgraphicsboulehorizontalitem.cpp ../TD_2/qgraphicsboulehorizontalitem.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qset.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qmatrix.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qpolygon.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtCore/qline.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qpixmap.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qpaintdevice.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qcolor.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qrgb.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qrgba64.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qimage.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qpixelformat.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtGui/qtransform.h \
+		/opt/Qt/5.12.3/gcc_64/include/QtWidgets/QGraphicsItem
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qgraphicsboulehorizontalitem.o ../TD_2/qgraphicsboulehorizontalitem.cpp
 
 moc_oui.o: moc_oui.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_oui.o moc_oui.cpp

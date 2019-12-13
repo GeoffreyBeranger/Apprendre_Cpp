@@ -2,6 +2,9 @@
 #define OUI_H
 
 #include <QWidget>
+#include <QGraphicsScene>
+#include <QTimer>
+#include "qgraphicsboulehorizontalitem.h"
 
 namespace Ui {
 class oui;
@@ -18,8 +21,13 @@ public:
 private slots:
     void on_pushButton_Animation_clicked();
 
+    void on_pushButton_Effacer_clicked();
+
 private:
     Ui::oui *ui;
+    QGraphicsScene maScene;
+    QGraphicsBouleHorizontalItem *maBoule;
+    QTimer timer;
 };
 
 #endif // OUI_H

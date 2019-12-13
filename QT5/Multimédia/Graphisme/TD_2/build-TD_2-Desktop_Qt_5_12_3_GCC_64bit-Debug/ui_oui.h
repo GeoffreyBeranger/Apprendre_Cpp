@@ -26,6 +26,7 @@ public:
     QGraphicsView *graphicsView_4;
     QPushButton *pushButton_Animation;
     QPushButton *pushButton_Quitter;
+    QPushButton *pushButton_Effacer;
 
     void setupUi(QWidget *oui)
     {
@@ -46,10 +47,13 @@ public:
         graphicsView_4->setGeometry(QRect(400, 260, 381, 241));
         pushButton_Animation = new QPushButton(oui);
         pushButton_Animation->setObjectName(QString::fromUtf8("pushButton_Animation"));
-        pushButton_Animation->setGeometry(QRect(310, 510, 80, 24));
+        pushButton_Animation->setGeometry(QRect(250, 510, 80, 24));
         pushButton_Quitter = new QPushButton(oui);
         pushButton_Quitter->setObjectName(QString::fromUtf8("pushButton_Quitter"));
-        pushButton_Quitter->setGeometry(QRect(400, 510, 80, 24));
+        pushButton_Quitter->setGeometry(QRect(450, 510, 80, 24));
+        pushButton_Effacer = new QPushButton(oui);
+        pushButton_Effacer->setObjectName(QString::fromUtf8("pushButton_Effacer"));
+        pushButton_Effacer->setGeometry(QRect(350, 510, 80, 24));
 
         retranslateUi(oui);
         QObject::connect(pushButton_Quitter, SIGNAL(clicked()), oui, SLOT(close()));
@@ -62,6 +66,7 @@ public:
         oui->setWindowTitle(QApplication::translate("oui", "oui", nullptr));
         pushButton_Animation->setText(QApplication::translate("oui", "Animer", nullptr));
         pushButton_Quitter->setText(QApplication::translate("oui", "Quitter", nullptr));
+        pushButton_Effacer->setText(QApplication::translate("oui", "Effacer", nullptr));
     } // retranslateUi
 
 };
