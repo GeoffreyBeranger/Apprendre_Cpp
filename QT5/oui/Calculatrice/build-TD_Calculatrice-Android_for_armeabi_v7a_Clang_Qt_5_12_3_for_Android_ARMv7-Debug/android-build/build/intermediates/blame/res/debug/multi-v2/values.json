@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/USERS/ELEVES/SNIR2018/gberanger/projetQt/SNIR2/Apprendre_Cpp/QT5/oui/Calculatrice/build-TD_Calculatrice-Android_for_armeabi_v7a_Clang_Qt_5_12_3_for_Android_ARMv7-Debug/android-build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/home/USERS/ELEVES/SNIR2018/gberanger/projetQt/SNIR2/Apprendre_Cpp/QT5/oui/Calculatrice/build-TD_Calculatrice-Android_for_armeabi_v7a_Clang_Qt_5_12_3_for_Android_ARMv7-Debug/android-build/res/values/libs.xml",
+                    "from": {
+                        "startLines": "68,29,-1,13,-1",
+                        "startColumns": "4,4,-1,5,-1",
+                        "startOffsets": "4348,694,-1,347,-1",
+                        "endLines": "485,67,-1,27,-1",
+                        "endColumns": "12,12,-1,13,-1",
+                        "endOffsets": "60618,4343,-1,688,-1"
+                    },
+                    "to": {
+                        "startLines": "2,420,459,462,477",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,56330,59984,60038,60384",
+                        "endLines": "419,458,461,476,479",
+                        "endColumns": "12,12,12,13,12",
+                        "endOffsets": "56325,59979,60033,60379,60494"
+                    }
+                },
+                {
+                    "source": "/opt/Qt/5.12.3/android_armv7/src/android/java/res/values/strings.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "480,481,482,483",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "60499,60607,60729,60841",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "60602,60724,60836,60934"
+                    }
+                }
+            ]
+        }
+    ]
+}

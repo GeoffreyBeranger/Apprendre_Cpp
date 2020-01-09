@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/USERS/ELEVES/SNIR2018/gberanger/projetQt/SNIR2/Apprendre_Cpp/QT5/oui/TD_Poids/build-TD_Poids-Android_for_armeabi_v7a_Clang_Qt_5_12_3_for_Android_ARMv7-Debug/android-build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/opt/Qt/5.12.3/android_armv7/src/android/java/res/values/strings.xml",
+                    "from": {
+                        "startLines": "5,4,3,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "319,197,85,427",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "422,314,192,520"
+                    },
+                    "to": {
+                        "startLines": "503,504,505,506",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "65253,65361,65483,65595",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "65356,65478,65590,65688"
+                    }
+                },
+                {
+                    "source": "/home/USERS/ELEVES/SNIR2018/gberanger/projetQt/SNIR2/Apprendre_Cpp/QT5/oui/TD_Poids/build-TD_Poids-Android_for_armeabi_v7a_Clang_Qt_5_12_3_for_Android_ARMv7-Debug/android-build/res/values/libs.xml",
+                    "from": {
+                        "startLines": "60,26,9,13,2",
+                        "startColumns": "4,4,4,5,4",
+                        "startOffsets": "3940,624,291,347,55",
+                        "endLines": "508,59,11,24,4",
+                        "endColumns": "12,12,12,13,12",
+                        "endOffsets": "65372,3935,340,618,165"
+                    },
+                    "to": {
+                        "startLines": "2,451,485,488,500",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,61492,64808,64862,65138",
+                        "endLines": "450,484,487,499,502",
+                        "endColumns": "12,12,12,13,12",
+                        "endOffsets": "61487,64803,64857,65133,65248"
+                    }
+                }
+            ]
+        }
+    ]
+}
